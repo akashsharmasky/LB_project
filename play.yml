@@ -1,0 +1,7 @@
+-	Hosts: balancers
+Become: true
+Tasks:
+-	Name:  Install haproxy 
+Yum:
+   Name: haproxy
+   Dest: installed
