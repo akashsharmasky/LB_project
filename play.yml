@@ -1,7 +1,18 @@
  - hosts: all
    become: true
    tasks:
+     - name: Remove vsftpd
+       yum: 
+         name: vsftpd
+         state: absent
+         
      - name:  Install vsftpd
        yum:
          name: vsftpd
          state: present
+         
+     - name: Start vsftpd Service
+       service: 
+         name: vsftpd
+         state: started
+         enabled: yes
